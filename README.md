@@ -39,6 +39,6 @@
 REST API
 Java 11
 Spring boot, JPA
-TBMD API 사용
+TMDB API 사용
 ```
 
