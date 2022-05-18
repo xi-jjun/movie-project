@@ -29,8 +29,9 @@ public class Review {
 	@Column
 	private LocalDateTime updatedDate;
 
-	@Column
-	private Long movieId;
+	@ManyToOne(targetEntity = Movie.class, fetch = FetchType.LAZY)
+	@JoinColumn(name = "movie_id")
+	private Movie movie;
 
 	@ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_id")
