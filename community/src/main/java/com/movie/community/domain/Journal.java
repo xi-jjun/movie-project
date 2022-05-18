@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
 
 @Entity
 public class Journal {
@@ -23,6 +24,9 @@ public class Journal {
 
 	@Column(columnDefinition = "TEXT")
 	private String content;
+
+	@Column
+	private LocalDateTime createdDate;
 
 	@Column
 	@Enumerated(EnumType.STRING)
