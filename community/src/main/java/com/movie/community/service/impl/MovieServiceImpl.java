@@ -4,11 +4,15 @@ import com.movie.community.controller.dto.request.MovieRequestDTO;
 import com.movie.community.controller.dto.response.MovieResponseDetailDTO;
 import com.movie.community.controller.dto.response.MovieResponseListDTO;
 import com.movie.community.controller.dto.response.ResponseDTO;
+import com.movie.community.domain.Holiday;
 import com.movie.community.domain.Movie;
+import com.movie.community.repository.HolidayRepository;
 import com.movie.community.repository.MovieRepository;
+import com.movie.community.service.HolidayService;
 import com.movie.community.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +21,8 @@ import java.util.stream.Collectors;
 @Service
 public class MovieServiceImpl implements MovieService {
 	private final MovieRepository movieRepository;
+
+	private final HolidayRepository holidayRepository;
 
 	@Override
 	public List<MovieResponseListDTO> getMovies() {
@@ -49,6 +55,8 @@ public class MovieServiceImpl implements MovieService {
 		Movie findMovie = movieRepository.findById(movieRequestDTO.getId());
 		if (findMovie == null) {
 			Movie movie = movieRequestDTO.toEntity();
+
+			mapHolidayToMovie(movieRequestDTO, movie);
 			movieRepository.save(movie);
 
 			return new ResponseDTO("success to register movie", 200);
@@ -57,12 +65,23 @@ public class MovieServiceImpl implements MovieService {
 		return new ResponseDTO("fail to register movie", 400);
 	}
 
+	private void mapHolidayToMovie(MovieRequestDTO movieRequestDTO, Movie movie) {
+		String holidayName = movieRequestDTO.getHoliday();
+
+		if (holidayName != null) {
+			Holiday holiday = holidayRepository.findByName(holidayName);
+			movie.setHoliday(holiday);
+		}
+	}
+
+	@Transactional
 	@Override
 	public ResponseDTO updateMovie(MovieRequestDTO movieRequestDTO) {
 		validateMovieRequestDTO(movieRequestDTO);
 
 		Movie movie = movieRepository.findById(movieRequestDTO.getId());
 		if (movie != null) {
+			mapHolidayToMovie(movieRequestDTO, movie);
 			movieRepository.update(movieRequestDTO);
 
 			return new ResponseDTO("success to update movie", 200);
