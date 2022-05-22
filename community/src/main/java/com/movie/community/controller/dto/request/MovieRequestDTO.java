@@ -21,6 +21,7 @@ public class MovieRequestDTO {
 	private LocalDate releasedDate;
 	private float popularity;
 	private String genres;
+	private String holiday;
 
 	public Movie toEntity() {
 		return new Movie(this);
