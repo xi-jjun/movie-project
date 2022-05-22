@@ -10,7 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Create, update, delete 는 모두 관리자만이 가능하다.
@@ -52,6 +54,9 @@ public class Movie {
 	@JoinColumn(name = "holiday_id")
 	private Holiday holiday;
 
+	@OneToMany(mappedBy = "movie")
+	private List<Review> reviews;
+
 	public Movie(MovieRequestDTO requestDTO) {
 		this.id = requestDTO.getId();
 		this.title = requestDTO.getTitle();
@@ -73,5 +78,9 @@ public class Movie {
 		this.imageUrl = requestDTO.getImageUrl();
 		this.releasedDate = requestDTO.getReleasedDate();
 		this.popularity = requestDTO.getPopularity();
+	}
+
+	public void setHoliday(Holiday holiday) {
+		this.holiday = holiday;
 	}
 }
