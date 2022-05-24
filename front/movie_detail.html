@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <link rel="stylesheet" href="02_home.css">
+  
+  <title>Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <style>
+    *{
+      font-family: 'Do Hyeon', sans-serif;
+    }
+  </style>
+</head>
+<body>
+<!-- 01_nav_footer.html -->  
+<nav class="navbar navbar-expand-md sticky-top navbar-light">
+  <div class="container-fluid d-flex flex-justify-content-between flex-align-items-center">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Logo Image">
+    </a>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- # 로그인 여부에 따라서 변경 해줘야 하는 부분 # -->
+          <li class="nav-item">
+            <a class="nav-link h2 mb-0" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h2 mb-0" href="#">SIGNUP</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form>
+        <div class="m-4">
+          <label for="exampleInputEmail1" class="form-label">ID</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="m-4">
+          <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+        <button type="button" class="btn btn-primary">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- movie_detail.html -->
+  <!-- # 선택한 영화의 디테일을 설명하는 부분 # -->
+  <div class="d-flex justify-content-center m-5">
+    <div class="'w-25">
+      <!-- Movie - poster_path_url -->
+      <img src="images/movie1.jpg" alt="Community Image">
+    </div>
+    <div class="d-flex justify-content-center flex-column w-25 m-5">
+      <!-- Movie - title -->
+      <div class="my-2 mx-5">
+        <h1>라이언 일병 구하기</h3>
+      </div>
+      <!-- Movie - score -->
+      <div class="my-2 mx-5">
+        <h4>SCORE : 8.192</h4>
+      </div>
+      <!-- Movie - description -->
+      <div class="my-2 mx-5">
+        <h4>1944년 6월 6일 노르망디 상륙 작전. 오마하 해변에 대기하고 있던 병사들은 한치 앞도 내다볼 수 없는 긴장된 상황에 두려움을 감출 수 없다. 노르망디 해변을 응시하는 밀러 대위와 가장 어려운 임무를 수행해야할 두려움에 지친 그의 대원들. 몇 번의 죽을 고비를 넘기고 맡은 바 임무를 완수하지만 3형제가 전사하고 적진에서 실종된 유일한 생존자인 막내 라이언 일병을 위한 미 행정부의 특별한 임무를 맡게 된다.단 한명의 목숨을 구하기 위해 여덟 명이 위험을 감수해야할 상황에서 대원들은 과연 라이언 일병 한 명의 생명이 그들 여덟 명의 생명보다 더 가치가 있는 것인지 끊임없는 혼란에 빠지는데...</h4>
+      </div>
+      <!-- Movie - release_date -->
+      <div class="my-2 mx-5">
+        <h4>RELEASE DATE : 1998-07-24</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- recommendation -->
+  <h1 class="text-center m-5">RECOMMENDATION</h1>
+  <!-- # 추천 영화 6개를 출력하는 부분 # -->
+  <!-- 추천 알고리즘에서 영화 6개 뽑아와야... -->
+  <div class="d-flex justify-content-center m-5">
+    <a>
+      <img style="width: 90%;" src="./images/movie2.jpg" alt="...">
+    </a>
+    <a>
+      <img style="width: 90%;" src="./images/movie3.jpg" alt="...">
+    </a>
+    <a>
+      <img style="width: 90%;" src="./images/movie4.jpg" alt="...">
+    </a>
+    <a>
+      <img style="width: 90%;" src="./images/movie5.jpg" alt="...">
+    </a>
+    <a>
+      <img style="width: 90%;" src="./images/movie6.jpg" alt="...">
+    </a>
+    <a>
+      <img style="width: 90%;" src="./images/movie2.jpg" alt="...">
+    </a>
+  </div>
+
+  <!-- review -->
+  <h1 class="text-center m-5">REVIEWS</h1>
+  <!-- # 영화에 달린 리뷰를 모두 출력 해야함 # -->
+  <table class="table w-75" style="margin-left: auto; margin-right: auto;">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center"><h4>REVIEW</h4></th>
+        <th scope="col" class="text-center"><h4>WRITER</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="text-center">Review1</th>
+        <td class="text-center">user</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-center">Review2</th>
+        <td class="text-center">user</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-center">Review3</th>
+        <td class="text-center">user</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-center">Review4</th>
+        <td class="text-center">user</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 01_nav_footer.html -->
+
+  <footer class="fixed-bottom sticky-end d-flex flex-row-reverse align-items-center" style="opacity: 0.8;">
+    <a type="button" class="btn m-2" href="#">
+      <img src="images/arrow.png" alt="arrow">
+    </a>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
+</body>
+</html>
