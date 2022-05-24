@@ -45,7 +45,7 @@ public class MemberControllerImpl implements MemberController {
 	 * @return
 	 */
 	@Override
-	@PostMapping("")
+	@PostMapping("/sign-up")
 	public ResponseDTO signUp(MemberRequestDTO requestDTO) {
 		ResponseDTO response = memberService.join(requestDTO);
 		return response;
