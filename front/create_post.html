@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <link rel="stylesheet" href="02_home.css">
+  
+  <title>Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <style>
+    *{
+      font-family: 'Do Hyeon', sans-serif;
+    }
+  </style>
+</head>
+<body>
+<!-- 01_nav_footer.html -->  
+<nav class="navbar navbar-expand-md sticky-top navbar-light">
+  <div class="container-fluid d-flex flex-justify-content-between flex-align-items-center">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Logo Image">
+    </a>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- # 로그인 여부에 따라서 변경 해줘야 하는 부분 # -->
+          <li class="nav-item">
+            <a class="nav-link h2 mb-0" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h2 mb-0" href="#">SIGNUP</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form>
+        <div class="m-4">
+          <label for="exampleInputEmail1" class="form-label">ID</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="m-4">
+          <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+        <button type="button" class="btn btn-primary">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- create_post.html -->
+  <!-- # 임의로 써 놓은 내용이어서 선택된 게시글을 출력해줘야함 # -->
+  <h1 class="text-center m-5">POSTING</h1>
+
+  <div class="m-5">
+    <label for="title" class="form-label"><h3>TITLE</h3></label>
+    <textarea class="form-control" id="title" rows="1"></textarea>
+  </div>
+
+  <div class="m-5">
+    <label for="content" class="form-label"><h3>CONTENT</h3></label>
+    <textarea class="form-control" id="content" rows="10"></textarea>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-secondary me-2">SUBMIT</button>
+    <button type="submit" class="btn btn-dark me-5">BACK</button>
+  </div>
+
+  <!-- 01_nav_footer.html -->
+  <footer class="fixed-bottom sticky-end d-flex flex-row-reverse align-items-center" style="opacity: 0.8;">
+    <a type="button" class="btn m-2" href="#">
+      <img src="images/arrow.png" alt="arrow">
+    </a>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
+</body>
+</html>
