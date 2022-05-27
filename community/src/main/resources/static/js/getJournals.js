@@ -12,24 +12,19 @@ function showJournal(journal) {
     journalContainer.classList.add("mb-5");
     journalContainer.classList.add("d-flex");
     journalContainer.classList.add("justify-cont");
-
-    let block = `<div class="card" style="width: 80%;">
-                    <img src=${journal['imageUrl']} class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h4 class="card-title">${journal['date']}</h4>
-                            </div>
-                            <div>
-                                <h4 class="card-title">${journal['emotion']}</h4>
-                            </div>
-                        </div>
-                        <h5 class="card-text my-2">${journal['quote']}</h5>
+// <h2><img src=${journal['imageUrl']}></h2>
+    let block = `<div class="card">
+                    <img src=${journal['imageUrl']}>
+                    <div class="content">
                         
+                        <h3>${journal['date']}</h3>
+                        <h3>${journal['emotion']}</h3>
+                        <p>${journal['quote']}</p>
+                        
+                        <a data-pk="${journal['id']}" onclick="removeJournal(this)">
+                            <h3>DELETE</h3>
+                        </a>
                     </div>
-                    <a class="d-flex justify-content-end mx-3 p-0" data-pk="${journal['id']}" onclick="removeJournal(this)" style="color:black; text-decoration: none;">
-                        <h3>DELETE</h3>
-                    </a>
                 </div>`;
 
     journalContainer.innerHTML = block;
