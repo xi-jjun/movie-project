@@ -1,19 +1,35 @@
 function showHolidayMovieList(movie) {
     const movieListContainer = document.querySelector("#holiday-movie-list-container");
 
+    // <tr>
+    //     <th scope="row" className="text-center">Great Movie title</th>
+    // </tr>
+
     const movieContainer = document.createElement("tr");
-    const movieTitle = document.createElement("th");
-    const anchor = document.createElement("a");
 
-    movieTitle.classList.add("text-center");
-    movieTitle.scope = "row";
-    // movieTitle.innerText = movie['title'];
+    let block = `
+                <th scope="row" class="text-center">
+                    <h3>
+                        <a href="/view/movies/${movie['id']}">
+                        ${movie['title']}
+                        </a>
+                    </h3>
+                </th>
+                `;
+    // const movieTitle = document.createElement("th");
+    // const anchor = document.createElement("a");
+    //
+    // movieTitle.classList.add("text-center");
+    // movieTitle.scope = "row";
+    // // movieTitle.innerText = movie['title'];
+    //
+    // anchor.href = "/view/movies/" + movie['id'];
+    // anchor.innerText = movie['title'];
+    // movieTitle.appendChild(anchor);
 
-    anchor.href = "/view/movies/" + movie['id'];
-    anchor.innerText = movie['title'];
-    movieTitle.appendChild(anchor);
+    // movieContainer.appendChild(movieTitle);
 
-    movieContainer.appendChild(movieTitle);
+    movieContainer.innerHTML = block;
 
     movieListContainer.appendChild(movieContainer);
 }
